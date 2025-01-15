@@ -1,0 +1,7 @@
+CONFIG_TCM ?= y
+INCDIR_PREFIX = -I
+
+ifeq ($(CONFIG_TCM),y)
+CFLAGS += ${INCDIR_PREFIX}${TCM_DIR}
+CFLAGS += ${INCDIR_PREFIX}${TCM_DIR}/src
+endif
