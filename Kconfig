@@ -1,0 +1,22 @@
+# TPM2 configuration options
+
+menuconfig TPM2
+	bool "TPM2 Support"
+	help
+	  This option enables the TPM2 library support.
+
+if TPM2
+
+config TPM2_LOG_LEVEL
+	int "TPM2 Log level"
+	default 3
+	range 0 4
+	help
+	  Sets log level for TPM2 module.
+	  - 0 OFF, do not write
+	  - 1 ERROR, only write LOG_ERR
+	  - 2 WARNING, write LOG_WRN in addition to previous level
+	  - 3 INFO, write LOG_INF in addition to previous levels
+	  - 4 DEBUG, write LOG_DBG in addition to previous levels
+
+endif # TPM2 
