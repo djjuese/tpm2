@@ -2,7 +2,7 @@
 
 if(CONFIG_TPM2)
   zephyr_include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
     )
 
   zephyr_library()
@@ -116,6 +116,11 @@ if(CONFIG_TPM2)
     src/X509_RSA.c
     src/X509_spt.c
     )
+  
+  zephyr_library_sources(
+    test/tcm_cmds_test.c
+     )
+
 
   zephyr_library_compile_options(
     -Wall
